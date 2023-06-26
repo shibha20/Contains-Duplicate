@@ -1,0 +1,22 @@
+class Solution(object):
+    def containsDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+
+        count_map = {}
+
+        for i in nums:
+            if i in count_map:
+                count_map[i] += 1 
+            else:   
+                count_map[i] = 1
+
+        
+        for i in count_map.values():
+            if i >= 2:
+                return True
+            
+        return False
+            
